@@ -298,7 +298,35 @@ function countTotalProgramLinks() {
 countTotalProgramLinks();
 //--------------------------------------
 // voice assistent
+const voiceSearchBtn = document.getElementById('voice-search-btn');
 
+        voiceSearchBtn.addEventListener('click', () => {
+            recognition.start();
+        });
+
+        recognition.onresult = (event) => {
+            const current = event.resultIndex;
+            const transcript = event.results[current][0].transcript;
+            content.textContent = transcript;
+            searchProgramByVoice(transcript.toLowerCase());
+        };
+
+        function searchProgramByVoice(voiceInput) {
+            let searchInput = voiceInput.trim();
+            const filteredPrograms = Object.keys(programLinks).filter(program => program.toLowerCase().includes(searchInput));
+
+            const datalist = document.getElementById('program-list');
+            datalist.innerHTML = '';
+            filteredPrograms.forEach(program => {
+                const option = document.createElement('option');
+                option.value = program;
+                datalist.appendChild(option);
+            });
+
+            if (filteredPrograms.length === 1) {
+                loadLinkInIframe(programLinks[filteredPrograms[0]]);
+            }
+        }
 // ... (your existing code)
 /*
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
