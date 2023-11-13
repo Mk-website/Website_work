@@ -309,7 +309,7 @@ const voiceSearchBtn = document.getElementById('voice-search-btn');
         recognition.onresult = (event) => {
             const current = event.resultIndex;
             const transcript = event.results[current][0].transcript;
-            content.textContent = transcript;
+            document.getElementById('search-input').value = transcript;
             searchProgramByVoice(transcript.toLowerCase());
         };
 
