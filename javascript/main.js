@@ -195,7 +195,7 @@ let iframe = document.getElementById('iframe');
             linkSelector.addEventListener('click', () => {
                 let selectedLink = linkSelector.value;
                 loadLinkInIframe(selectedLink);
-
+                speak("You select array program");
             });
     
             let linkSelecto = document.getElementById('linkSelecto');
@@ -327,6 +327,10 @@ const voiceSearchBtn = document.getElementById('voice-search-btn');
             if (filteredPrograms.length === 1) {
                 loadLinkInIframe(programLinks[filteredPrograms[0]]);
             }
+        }
+        function info()
+        {
+            speak("Website created by Mr. Manjit kumar");
         }
         function speak(sentence) {
             const text_speak = new SpeechSynthesisUtterance(sentence);
