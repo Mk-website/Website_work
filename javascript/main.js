@@ -301,6 +301,7 @@ countTotalProgramLinks();
 const voiceSearchBtn = document.getElementById('voice-search-btn');
 
         voiceSearchBtn.addEventListener('click', () => {
+            speak("Activating voice search");
             recognition.start();
         });
 
@@ -326,6 +327,13 @@ const voiceSearchBtn = document.getElementById('voice-search-btn');
             if (filteredPrograms.length === 1) {
                 loadLinkInIframe(programLinks[filteredPrograms[0]]);
             }
+        }
+        function speak(sentence) {
+            const text_speak = new SpeechSynthesisUtterance(sentence);
+        
+            text_speak.rate = 1;
+            text_speak.pitch = 1;
+            window.speechSynthesis.speak(text_speak);
         }
 // ... (your existing code)
 /*
