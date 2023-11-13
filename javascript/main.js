@@ -304,7 +304,8 @@ const voiceSearchBtn = document.getElementById('voice-search-btn');
             speak("Activating voice search");
             recognition.start();
         });
-
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
         recognition.onresult = (event) => {
             const current = event.resultIndex;
             const transcript = event.results[current][0].transcript;
