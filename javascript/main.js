@@ -301,7 +301,7 @@ countTotalProgramLinks();
 const voiceSearchBtn = document.getElementById('voice-search-btn');
 
         voiceSearchBtn.addEventListener('click', () => {
-            //speak("Activating voice search");
+            
             recognition.start();
         });
         const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
