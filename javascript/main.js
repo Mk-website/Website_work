@@ -195,7 +195,6 @@ let iframe = document.getElementById('iframe');
             linkSelector.addEventListener('click', () => {
                 let selectedLink = linkSelector.value;
                 loadLinkInIframe(selectedLink);
-                speak("You select array program");
             });
     
             let linkSelecto = document.getElementById('linkSelecto');
@@ -341,64 +340,7 @@ const voiceSearchBtn = document.getElementById('voice-search-btn');
             window.speechSynthesis.speak(text_speak);
         }
 // ... (your existing code)
-/*
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
 
-recognition.onresult = (event) => {
-    const current = event.resultIndex;
-    const transcript = event.results[current][0].transcript;
-    content.textContent = transcript;
-    processVoiceCommand(transcript.toLowerCase());
-}
-
-btn2.addEventListener('click', () => {
-    recognition.start();
-})
-
-function processVoiceCommand(command) {
-    if (command.includes('search')) {
-        const searchTerm = command.replace('search', '').trim();
-        searchProgramByVoice(searchTerm);
-    } else {
-        speakThis("I did not understand the command. Please try again.");
-    }
-}
-
-function searchProgramByVoice(searchTerm) {
-    // Filter programs based on voice search input
-    const filteredPrograms = Object.keys(programLinks).filter(program => program.toLowerCase().includes(searchTerm));
-
-    // Populate datalist with filtered programs
-    const datalist = document.getElementById('program-list');
-    datalist.innerHTML = '';
-    filteredPrograms.forEach(program => {
-        const option = document.createElement('option');
-        option.value = program;
-        datalist.appendChild(option);
-    });
-
-    // If there's only one matching program, automatically load it in the iframe
-    if (filteredPrograms.length === 1) {
-        loadLinkInIframe(programLinks[filteredPrograms[0]]);
-    }
-}
-*/
-// ... (rest of your existing code)
-
-
-/*
-console.log('Hello World!');
-const btn = document.querySelector('.btn');
-const content = document.querySelector('.form-input');
-
-function speak(sentence) {
-    const text_speak = new SpeechSynthesisUtterance(sentence);
-
-    text_speak.rate = 1;
-    text_speak.pitch = 1;
-    window.speechSynthesis.speak(text_speak);
-}
 
 function wishMe() {
     var day = new Date();
@@ -430,14 +372,14 @@ window.addEventListener('load', ()=>{
     wishMe();
 });
 
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
-
+/*
+ const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition();
 recognition.onresult = (event) => {
     const current = event.resultIndex;
     const transcript = event.results[current][0].transcript;
     content.textContent = transcript;
-    processVoiceCommand(transcript.toLowerCase());
+    speakThis(transcript.toLowerCase());
 }
 
 btn.addEventListener('click', ()=>{
@@ -517,32 +459,5 @@ function speakThis(message) {
     speech.rate = 1;
 
     window.speechSynthesis.speak(speech);
-}
-function processVoiceCommand(command) {
-    if (command.includes('search')) {
-        const searchTerm = command.replace('search', '').trim();
-        searchProgramByVoice(searchTerm);
-    } else {
-        speakThis("I did not understand the command. Please try again.");
-    }
-}
-
-function searchProgramByVoice(searchTerm) {
-    // Filter programs based on voice search input
-    const filteredPrograms = Object.keys(programLinks).filter(program => program.toLowerCase().includes(searchTerm));
-
-    // Populate datalist with filtered programs
-    const datalist = document.getElementById('program-list');
-    datalist.innerHTML = '';
-    filteredPrograms.forEach(program => {
-        const option = document.createElement('option');
-        option.value = program;
-        datalist.appendChild(option);
-    });
-
-    // If there's only one matching program, automatically load it in the iframe
-    if (filteredPrograms.length === 1) {
-        loadLinkInIframe(programLinks[filteredPrograms[0]]);
-    }
 }
 */

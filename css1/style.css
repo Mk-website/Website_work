@@ -2,7 +2,21 @@
   margin: 0;
   padding: 0; 
 }
+.btn-voice-search {
+  /* Add your preferred styles for the voice search button */
+  /* For example: */
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  /* Add more styles as needed */
+}
 
+.btn-voice-search:hover {
+  background-color: #ddd;
+  /* Adjust hover styles as desired */
+}
 
 .navigation {
   margin-top: 25px;
