@@ -297,6 +297,7 @@ function countTotalProgramLinks() {
 countTotalProgramLinks();
 //--------------------------------------
 // voice assistent
+/*
 const voiceSearchBtn = document.getElementById('voice-search-btn');
 
         voiceSearchBtn.addEventListener('click', () => {
